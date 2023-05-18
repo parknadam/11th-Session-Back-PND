@@ -2,6 +2,12 @@
 {{blog.date}}
 <br>
 {{blog.body}}
+<br>
+<div>
+    {% for hashtag in hashtags.all %}
+    #{{hashtag}}
+    {% endfor %}
+</div>
 
 <a href="{% url 'delete' blog.id %}">삭제하기</a>
 <a href="{% url 'update_page' blog.id %}">수정하기</a>

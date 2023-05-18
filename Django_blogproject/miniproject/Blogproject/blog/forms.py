@@ -2,7 +2,7 @@ from dataclasses import field
 from django import forms 
 from .models import Blog, Comment
 
-class Blogform(forms.ModelForm):
+class BlogForm(forms.ModelForm):
     class Meta:
         model = Blog
         fields = ['title', 'body']
