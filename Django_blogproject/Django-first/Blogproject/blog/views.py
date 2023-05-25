@@ -31,7 +31,7 @@ def detail(request, blog_id):
 
 def new(request):
     form=BlogForm()
-    return render(request, 'new.html')
+    return render(request, 'new.html', {'form':form})
 
 def create(request):
     form = BlogForm(request.POST, request.FILES)
