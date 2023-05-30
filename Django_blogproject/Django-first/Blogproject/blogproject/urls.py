@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 import blog.views
+import account.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +32,9 @@ urlpatterns = [
     path('update_page/<int:blog_id>',blog.views.update_page,name="update_page"),
     path('update/<int:blog_id>',blog.views.update,name="update2"),
     path('<int:blog_id>/comment',blog.views.add_comment,name="add_comment"),   
+    
+    path('account/login', account.views.login_view, name="login"),
+    path('account/logout', account.views.logout_view, name="logout"),
+    path('account/signup', account.views.signup_view, name="signup"),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

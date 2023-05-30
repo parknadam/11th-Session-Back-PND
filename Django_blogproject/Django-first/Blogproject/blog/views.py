@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.utils import timezone
 from .forms import *
+
 # Create your views here.
+
 
 def add_comment(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
